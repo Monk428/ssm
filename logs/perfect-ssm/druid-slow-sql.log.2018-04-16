@@ -1,0 +1,12 @@
+[16:55:43] StatFilter - slow sql 732 millis. SELECT
+          id,
+          username,
+          password,
+          email
+        FROM
+          user
+        WHERE
+          id = ?[1]
+[16:20:29] StatFilter - slow sql 726 millis. INSERT INTO
+         user(username,password,email)
+        VALUES (?,?,?)["monk","654321","wengjianfen@126.com"]

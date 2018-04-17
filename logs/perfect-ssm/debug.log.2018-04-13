@@ -1,0 +1,125 @@
+[16:55:40] ClassPathMapperScanner - Identified candidate component class: file [/Users/superfeng/javaWeb/web_servlet/target/classes/com/mk/dao/UserDao.class]
+[16:55:40] ClassPathMapperScanner - Creating MapperFactoryBean with name 'userDao' and 'com.mk.dao.UserDao' mapperInterface
+[16:55:42] DruidDataSource - {dataSource-1} inited
+[16:55:42] SqlSessionFactoryBean - Scanned package: 'com.mk.entity' for aliases
+[16:55:42] SqlSessionFactoryBean - Parsed configuration file: 'class path resource [mybatis-config.xml]'
+[16:55:42] SqlSessionFactoryBean - Parsed mapper file: 'file [/Users/superfeng/javaWeb/web_servlet/target/classes/mapper/User.xml]'
+[16:55:42] SqlSessionUtils - Creating a new SqlSession
+[16:55:42] SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@62833051] was not registered for synchronization because synchronization is not active
+[16:55:42] SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@42a15bdc] will not be managed by Spring
+[16:55:42] queryById - ==>  Preparing: SELECT id, username, password, email FROM user WHERE id = ? 
+[16:55:43] queryById - ==> Parameters: 1(Integer)
+[16:55:43] StatFilter - slow sql 732 millis. SELECT
+          id,
+          username,
+          password,
+          email
+        FROM
+          user
+        WHERE
+          id = ?[1]
+[16:55:43] queryById - <==      Total: 1
+[16:55:43] PreparedStatementPool - {conn-10010, pstmt-20000} enter cache
+[16:55:43] SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@62833051]
+[16:55:43] SqlSessionUtils - Creating a new SqlSession
+[16:55:43] SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@63fbfaeb] was not registered for synchronization because synchronization is not active
+[16:55:43] SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@42a15bdc] will not be managed by Spring
+[16:55:43] queryByNameAndPassword - ==>  Preparing: SELECT * FROM user WHERE username = ? AND password = ? 
+[16:55:43] queryByNameAndPassword - ==> Parameters: wjf(String), 123456(String)
+[16:55:43] queryByNameAndPassword - <==      Total: 1
+[16:55:43] PreparedStatementPool - {conn-10010, pstmt-20001} enter cache
+[16:55:43] SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@63fbfaeb]
+[16:55:43] PreparedStatementPool - {conn-10010, pstmt-20000} exit cache
+[16:55:43] PreparedStatementPool - {conn-10010, pstmt-20001} exit cache
+[16:55:43] DruidDataSource - {dataSource-1} closed
+[16:57:46] ClassPathMapperScanner - Identified candidate component class: file [/Users/superfeng/javaWeb/web_servlet/target/classes/com/mk/dao/UserDao.class]
+[16:57:46] ClassPathMapperScanner - Creating MapperFactoryBean with name 'userDao' and 'com.mk.dao.UserDao' mapperInterface
+[16:57:48] DruidDataSource - {dataSource-1} inited
+[16:57:48] SqlSessionFactoryBean - Scanned package: 'com.mk.entity' for aliases
+[16:57:48] SqlSessionFactoryBean - Parsed configuration file: 'class path resource [mybatis-config.xml]'
+[16:57:48] SqlSessionFactoryBean - Parsed mapper file: 'file [/Users/superfeng/javaWeb/web_servlet/target/classes/mapper/User.xml]'
+[16:57:48] SqlSessionUtils - Creating a new SqlSession
+[16:57:48] SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@43599640] was not registered for synchronization because synchronization is not active
+[16:57:49] SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2b9ed6da] will not be managed by Spring
+[16:57:49] queryById - ==>  Preparing: SELECT id, username, password, email FROM user WHERE id = ? 
+[16:57:49] queryById - ==> Parameters: 1(Integer)
+[16:57:49] queryById - <==      Total: 1
+[16:57:49] PreparedStatementPool - {conn-10010, pstmt-20000} enter cache
+[16:57:49] SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@43599640]
+[16:57:49] SqlSessionUtils - Creating a new SqlSession
+[16:57:49] SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@49ff7d8c] was not registered for synchronization because synchronization is not active
+[16:57:49] SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2b9ed6da] will not be managed by Spring
+[16:57:49] queryByNameAndPassword - ==>  Preparing: SELECT * FROM user WHERE username = ? AND password = ? 
+[16:57:49] queryByNameAndPassword - ==> Parameters: wjf(String), 123456(String)
+[16:57:49] queryByNameAndPassword - <==      Total: 1
+[16:57:49] PreparedStatementPool - {conn-10010, pstmt-20001} enter cache
+[16:57:49] SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@49ff7d8c]
+[16:57:49] PreparedStatementPool - {conn-10010, pstmt-20000} exit cache
+[16:57:49] PreparedStatementPool - {conn-10010, pstmt-20001} exit cache
+[16:57:49] DruidDataSource - {dataSource-1} closed
+[16:58:35] ClassPathMapperScanner - Identified candidate component class: file [/Users/superfeng/javaWeb/web_servlet/target/classes/com/mk/dao/UserDao.class]
+[16:58:35] ClassPathMapperScanner - Creating MapperFactoryBean with name 'userDao' and 'com.mk.dao.UserDao' mapperInterface
+[16:58:36] DruidDataSource - {dataSource-1} inited
+[16:58:36] SqlSessionFactoryBean - Scanned package: 'com.mk.entity' for aliases
+[16:58:36] SqlSessionFactoryBean - Parsed configuration file: 'class path resource [mybatis-config.xml]'
+[16:58:36] SqlSessionFactoryBean - Parsed mapper file: 'file [/Users/superfeng/javaWeb/web_servlet/target/classes/mapper/User.xml]'
+[16:58:36] SqlSessionUtils - Creating a new SqlSession
+[16:58:36] SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6d868997] was not registered for synchronization because synchronization is not active
+[16:58:36] SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@5bdaf2ce] will not be managed by Spring
+[16:58:36] queryById - ==>  Preparing: SELECT id, username, password, email FROM user WHERE id = ? 
+[16:58:37] queryById - ==> Parameters: 1(Integer)
+[16:58:37] queryById - <==      Total: 1
+[16:58:37] PreparedStatementPool - {conn-10010, pstmt-20000} enter cache
+[16:58:37] SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6d868997]
+[16:59:04] SqlSessionUtils - Creating a new SqlSession
+[16:59:04] SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@417d6615] was not registered for synchronization because synchronization is not active
+[16:59:04] SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@5bdaf2ce] will not be managed by Spring
+[16:59:04] queryByNameAndPassword - ==>  Preparing: SELECT * FROM user WHERE username = ? AND password = ? 
+[16:59:04] queryByNameAndPassword - ==> Parameters: wjf(String), 123456(String)
+[16:59:04] queryByNameAndPassword - <==      Total: 1
+[16:59:04] PreparedStatementPool - {conn-10010, pstmt-20001} enter cache
+[16:59:04] SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@417d6615]
+[16:59:04] PreparedStatementPool - {conn-10010, pstmt-20000} exit cache
+[16:59:04] PreparedStatementPool - {conn-10010, pstmt-20001} exit cache
+[16:59:04] DruidDataSource - {dataSource-1} closed
+[17:00:32] ClassPathMapperScanner - Identified candidate component class: file [/Users/superfeng/javaWeb/web_servlet/target/classes/com/mk/dao/UserDao.class]
+[17:00:32] ClassPathMapperScanner - Creating MapperFactoryBean with name 'userDao' and 'com.mk.dao.UserDao' mapperInterface
+[17:00:33] DruidDataSource - {dataSource-1} inited
+[17:00:33] SqlSessionFactoryBean - Scanned package: 'com.mk.entity' for aliases
+[17:00:33] SqlSessionFactoryBean - Parsed configuration file: 'class path resource [mybatis-config.xml]'
+[17:00:33] SqlSessionFactoryBean - Parsed mapper file: 'file [/Users/superfeng/javaWeb/web_servlet/target/classes/mapper/User.xml]'
+[17:00:33] SqlSessionUtils - Creating a new SqlSession
+[17:00:33] SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@43599640] was not registered for synchronization because synchronization is not active
+[17:00:33] SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2b9ed6da] will not be managed by Spring
+[17:00:33] queryById - ==>  Preparing: SELECT id, username, password, email FROM user WHERE id = ? 
+[17:00:34] queryById - ==> Parameters: 1(Integer)
+[17:00:34] queryById - <==      Total: 1
+[17:00:34] PreparedStatementPool - {conn-10010, pstmt-20000} enter cache
+[17:00:34] SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@43599640]
+[17:00:34] SqlSessionUtils - Creating a new SqlSession
+[17:00:34] SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@49ff7d8c] was not registered for synchronization because synchronization is not active
+[17:00:34] SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2b9ed6da] will not be managed by Spring
+[17:00:34] queryByNameAndPassword - ==>  Preparing: SELECT * FROM user WHERE username = ? AND password = ? 
+[17:00:34] queryByNameAndPassword - ==> Parameters: wjf(String), 123456(String)
+[17:00:34] queryByNameAndPassword - <==      Total: 1
+[17:00:34] PreparedStatementPool - {conn-10010, pstmt-20001} enter cache
+[17:00:34] SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@49ff7d8c]
+[17:00:34] PreparedStatementPool - {conn-10010, pstmt-20000} exit cache
+[17:00:34] PreparedStatementPool - {conn-10010, pstmt-20001} exit cache
+[17:00:34] DruidDataSource - {dataSource-1} closed
+[17:35:06] ClassPathMapperScanner - Identified candidate component class: file [/Users/superfeng/javaWeb/web_servlet/target/classes/com/mk/dao/UserDao.class]
+[17:35:06] ClassPathMapperScanner - Creating MapperFactoryBean with name 'userDao' and 'com.mk.dao.UserDao' mapperInterface
+[17:35:08] DruidDataSource - {dataSource-1} inited
+[17:35:09] SqlSessionFactoryBean - Scanned package: 'com.mk.entity' for aliases
+[17:35:09] SqlSessionFactoryBean - Parsed configuration file: 'class path resource [mybatis-config.xml]'
+[17:35:09] SqlSessionFactoryBean - Parsed mapper file: 'file [/Users/superfeng/javaWeb/web_servlet/target/classes/mapper/User.xml]'
+[17:35:09] SqlSessionUtils - Creating a new SqlSession
+[17:35:09] SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7357a011] was not registered for synchronization because synchronization is not active
+[17:35:09] SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7357a011]
+[17:35:09] SqlSessionUtils - Creating a new SqlSession
+[17:35:09] SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4416d64f] was not registered for synchronization because synchronization is not active
+[17:35:09] SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4416d64f]
+[17:35:09] SqlSessionUtils - Creating a new SqlSession
+[17:35:09] SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@732d0d24] was not registered for synchronization because synchronization is not active
+[17:35:09] SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@732d0d24]
+[17:35:10] DruidDataSource - {dataSource-1} closed

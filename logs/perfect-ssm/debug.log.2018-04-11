@@ -1,0 +1,25 @@
+[11:33:29] ClassPathMapperScanner - Identified candidate component class: file [/Users/superfeng/javaWeb/web_servlet/target/classes/com/mk/dao/UserDao.class]
+[11:33:29] ClassPathMapperScanner - Creating MapperFactoryBean with name 'userDao' and 'com.mk.dao.UserDao' mapperInterface
+[11:33:30] DruidDataSource - {dataSource-1} inited
+[11:33:30] SqlSessionFactoryBean - Scanned package: 'com.mk.entity' for aliases
+[11:33:31] SqlSessionFactoryBean - Parsed configuration file: 'class path resource [mybatis-config.xml]'
+[11:33:31] SqlSessionFactoryBean - Parsed mapper file: 'file [/Users/superfeng/javaWeb/web_servlet/target/classes/mapper/User.xml]'
+[11:33:31] SqlSessionUtils - Creating a new SqlSession
+[11:33:31] SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@43599640] was not registered for synchronization because synchronization is not active
+[11:33:31] SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2b9ed6da] will not be managed by Spring
+[11:33:31] queryById - ==>  Preparing: SELECT id, username, password, email FROM user WHERE id = ? 
+[11:33:31] queryById - ==> Parameters: 1(Integer)
+[11:33:31] queryById - <==      Total: 1
+[11:33:31] PreparedStatementPool - {conn-10010, pstmt-20000} enter cache
+[11:33:31] SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@43599640]
+[11:33:31] SqlSessionUtils - Creating a new SqlSession
+[11:33:31] SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@49ff7d8c] was not registered for synchronization because synchronization is not active
+[11:33:31] SpringManagedTransaction - JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2b9ed6da] will not be managed by Spring
+[11:33:31] queryByNameAndPassword - ==>  Preparing: SELECT * FROM user WHERE username = ? AND password = ? 
+[11:33:31] queryByNameAndPassword - ==> Parameters: wjf(String), 123456(String)
+[11:33:31] queryByNameAndPassword - <==      Total: 1
+[11:33:31] PreparedStatementPool - {conn-10010, pstmt-20001} enter cache
+[11:33:31] SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@49ff7d8c]
+[11:33:31] PreparedStatementPool - {conn-10010, pstmt-20000} exit cache
+[11:33:31] PreparedStatementPool - {conn-10010, pstmt-20001} exit cache
+[11:33:31] DruidDataSource - {dataSource-1} closed

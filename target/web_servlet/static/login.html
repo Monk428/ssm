@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="./wechat/jquery-2.0.2.min.js"></script>
+</head>
+<body>
+<div>
+        用户名：<input type="text" id="username"><br/>
+        密码： <input type="password" id="password"><br/>
+        <div id="submit" >登录</div><br/>
+</div>
+<form action="/verify/login" method="post">
+    用户名：<input type="text" name="username"><br/>
+    密码： <input type="password" name="password"><br/>
+    <input type="submit" name="登录"><br/>
+</form>
+</body>
+<script>
+    $('#submit').click(function () {
+        var json = {"username":$('#username').val(),"password":$('#password').val()}
+        $.ajax({
+            type: "POST",
+            url: '/verify/login',
+            data: json,
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+            },
+            error: function () {
+                console.log("提交失败");
+            },
+            complete: function () {
+                console.log("complete");
+            }
+        })
+    })
+</script>
+</html>
