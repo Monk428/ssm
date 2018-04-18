@@ -33,7 +33,6 @@ public class LoginServlet {
 
             if (user != null) {
 //                将登录的用户的user对象存到session中
-
                 Result result = JsonResult.genSuccessResult();
                 Map<String, String> data = new HashMap<String, String>();
                 data.put("r","111");
