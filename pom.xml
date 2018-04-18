@@ -2,7 +2,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.javaweb</groupId>
-    <artifactId>web_servlet</artifactId>
+    <!--这个会在访问的URL前添加/springDemo/***-->
+    <artifactId>springDemo</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
     <name>web_servlet Maven Webapp</name>
@@ -74,6 +75,7 @@
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>3.1.0</version>
+            <scope>provided</scope>
         </dependency>
 
         <!-- 4.Spring -->
@@ -154,7 +156,6 @@
         </dependency>
     </dependencies>
 
-
     <build>
         <finalName>web_servlet</finalName>
         <plugins>
@@ -167,6 +168,5 @@
                 </configuration>
             </plugin>
         </plugins>
-
     </build>
 </project>
