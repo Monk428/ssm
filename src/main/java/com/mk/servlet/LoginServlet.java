@@ -46,6 +46,43 @@ public class LoginServlet {
                 return result;
             }
     }
+
+    @RequestMapping(value = "/signup", method = RequestMethod.POST)
+    @ResponseBody
+    private Result signup(User user) {
+        try {
+
+            userService.userSignUp(user);
+            logger.info("signup info is: " + user.toString());
+
+            Result result = JsonResult.genSuccessResult();
+            Map<String, String> data = new HashMap<String, String>();
+            data.put("r","");
+            result.setData(data);
+            return result;
+
+        } catch (Exception e) {
+
+            String errorMsg = e.getLocalizedMessage();
+            if (errorMsg.contains("Duplicate entry")) {
+                if (errorMsg.contains("for key 'usename'")) {
+                    System.out.println("用户名重复");
+                } else if (errorMsg.contains("for key 'email'")) {
+                    System.out.println("邮箱重复");
+                }
+            } else {
+                System.out.println("数据库错误");
+            }
+            logger.info("signup error info is: " + errorMsg);
+
+            Result result = JsonResult.genFailResult(errorMsg);
+            Map<String, String> data = new HashMap<String, String>();
+            data.put("r","00");
+            result.setData(data);
+            return result;
+
+        }
+    }
 }
 
 
