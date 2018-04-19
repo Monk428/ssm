@@ -1,5 +1,7 @@
 package com.common.pojo;
 
+import java.util.Map;
+
 public class JsonResult{
     private static final String DEFAULT_SUCCESS_MESSAGE = "SUCCESS";
     private static final String DEFAULT_FAIL_MESSAGE = "FAIL";
@@ -11,8 +13,8 @@ public class JsonResult{
         return result;
     }
 
-    public static Result genSuccessResult(Object data) {
-        Result result = new Result();
+    public static Result<Map> genSuccessResult(Map<String,String> data) {
+        Result<Map> result = new Result<Map>();
         result.setResultCode(Constants.RESULT_CODE_SUCCESS);
         result.setMessage(DEFAULT_SUCCESS_MESSAGE);
         result.setData(data);

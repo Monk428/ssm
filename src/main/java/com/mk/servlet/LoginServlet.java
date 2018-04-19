@@ -33,17 +33,13 @@ public class LoginServlet {
 
             if (user != null) {
 //                将登录的用户的user对象存到session中
-                Result result = JsonResult.genSuccessResult();
                 Map<String, String> data = new HashMap<String, String>();
+
+                Result result = JsonResult.genSuccessResult(data);
                 data.put("r","111");
-                result.setData(data);
                 return result;
             } else {
-                Result result = JsonResult.genFailResult("登录失败");
-                Map<String, String> data = new HashMap<String, String>();
-                data.put("r","000");
-                result.setData(data);
-                return result;
+                return JsonResult.genFailResult("登录失败");
             }
     }
 
@@ -55,10 +51,9 @@ public class LoginServlet {
             userService.userSignUp(user);
             logger.info("signup info is: " + user.toString());
 
-            Result result = JsonResult.genSuccessResult();
             Map<String, String> data = new HashMap<String, String>();
+            Result result = JsonResult.genSuccessResult(data);
             data.put("r","");
-            result.setData(data);
             return result;
 
         } catch (Exception e) {
@@ -75,12 +70,7 @@ public class LoginServlet {
             }
             logger.info("signup error info is: " + errorMsg);
 
-            Result result = JsonResult.genFailResult(errorMsg);
-            Map<String, String> data = new HashMap<String, String>();
-            data.put("r","00");
-            result.setData(data);
-            return result;
-
+            return JsonResult.genFailResult(errorMsg);
         }
     }
 }
