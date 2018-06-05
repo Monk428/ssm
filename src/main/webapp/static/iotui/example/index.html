@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,viewport-fit=cover">
+    <title>iotui</title>
+    <link rel="stylesheet" href="../style/iotui.css"/>
+    <link rel="stylesheet" href="./example.css"/>
+</head>
+<body ontouchstart>
+    <div class="weui-toptips weui-toptips_warn js_tooltips">错误提示</div>
+
+    <div class="container" id="container"></div>
+
+    <script type="text/html" id="tpl_home">
+<div class="page">
+    <div class="page__hd">
+        <h1 class="page__title">
+        </h1>
+        <p class="page__desc">iotui 是一套同原生视觉体验一致的前端基础样式库，由物联网研究院及工业设计中心联合设计开发，令公司面向所有前端用户的使用感知更加统一。</p>
+    </div>
+    <div class="page__bd page__bd_spacing">
+        <ul>
+            <li>
+                <div class="iotui-flex js_category">
+                    <p class="iotui-flex__item">表单</p>
+                    <img src="./images/icon_nav_form.png" alt="">
+                </div>
+                <div class="page__category js_categoryInner">
+                    <div class="iotui-cells page__category-content">
+                        <a class="iotui-cell iotui-cell_access js_item" data-id="button" href="javascript:;">
+                            <div class="iotui-cell__bd">
+                                <p>Button</p>
+                            </div>
+                            <div class="iotui-cell__ft"></div>
+                        </a>
+
+                        <a class="iotui-cell iotui-cell_access js_item" data-id="input" href="javascript:;">
+                            <div class="iotui-cell__bd">
+                                <p>Input</p>
+                            </div>
+                            <div class="iotui-cell__ft"></div>
+                        </a>
+                        <a class="iotui-cell iotui-cell_access js_item" data-id="cell" href="javascript:;">
+                            <div class="iotui-cell__bd">
+                                <p>Cell</p>
+                            </div>
+                            <div class="iotui-cell__ft"></div>
+                        </a>
+                        <!---------添加radio等-------------------------------------------------------------------------------------------------------------------->
+                        <a class="iotui-cell iotui-cell_access js_item" data-id="icon" href="javascript:;">
+                            <div class="iotui-cell__bd">
+                                <p>Icon</p>
+                            </div>
+                            <div class="iotui-cell__ft"></div>
+                        </a>
+
+                        <a class="iotui-cell iotui-cell_access js_item" data-id="input-checkbox-radio" href="javascript:;">
+                            <div class="iotui-cell__bd">
+                                <p>Checkbox radio</p>
+                            </div>
+                            <div class="iotui-cell__ft"></div>
+                        </a>
+
+                        <a class="iotui-cell iotui-cell_access js_item" data-id="stepbar" href="javascript:;">
+                            <div class="iotui-cell__bd">
+                                <p>Stepbar</p>
+                            </div>
+                            <div class="iotui-cell__ft"></div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="iotui-flex js_category">
+                    <p class="iotui-flex__item">基础组件</p>
+                    <img src="./images/icon_nav_layout.png" alt="">
+                </div>
+                <div class="page__category js_categoryInner">
+                    <div class="iotui-cells page__category-content">
+                        <a class="iotui-cell iotui-cell_access js_item" data-id="panel" href="javascript:;">
+                            <div class="iotui-cell__bd">
+                                <p>Panel</p>
+                            </div>
+                            <div class="iotui-cell__ft"></div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="iotui-flex js_category">
+                    <p class="iotui-flex__item">操作反馈</p>
+                    <img src="./images/icon_nav_feedback.png" alt="">
+                </div>
+                <div class="page__category js_categoryInner">
+                    <div class="iotui-cells page__category-content">
+                        <a class="iotui-cell iotui-cell_access js_item" data-id="picker" href="javascript:;">
+                            <div class="iotui-cell__bd">
+                                <p>Picker</p>
+                            </div>
+                            <div class="iotui-cell__ft"></div>
+                        </a>
+                        <a class="iotui-cell iotui-cell_access js_item" data-id="toast" href="javascript:;">
+                            <div class="iotui-cell__bd">
+                                <p>Toast</p>
+                            </div>
+                            <div class="iotui-cell__ft"></div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="iotui-flex js_category">
+                    <p class="iotui-flex__item">导航相关</p>
+                    <img src="./images/icon_nav_nav.png" alt="">
+                </div>
+                <div class="page__category js_categoryInner">
+                    <div class="iotui-cells page__category-content">
+                        <a class="iotui-cell iotui-cell_access js_item" data-id="header" href="javascript:;">
+                            <div class="iotui-cell__bd">
+                                <p>Header</p>
+                            </div>
+                            <div class="iotui-cell__ft"></div>
+                        </a>
+                        <a class="iotui-cell iotui-cell_access js_item" data-id="tabbar" href="javascript:;">
+                            <div class="iotui-cell__bd">
+                                <p>Tabbar</p>
+                            </div>
+                            <div class="iotui-cell__ft"></div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="iotui-flex js_category">
+                    <p class="iotui-flex__item">搜索相关</p>
+                    <img src="./images/icon_nav_search.png" alt="">
+                </div>
+                <div class="page__category js_categoryInner">
+                    <div class="iotui-cells page__category-content">
+                        <a class="iotui-cell iotui-cell_access js_item" data-id="searchbar" href="javascript:;">
+                            <div class="iotui-cell__bd">
+                                <p>Search Bar</p>
+                            </div>
+                            <div class="iotui-cell__ft"></div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="iotui-flex js_item" data-id="layers">
+                    <p class="iotui-flex__item">层级规范</p>
+                    <img src="./images/icon_nav_z-index.png" alt="">
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="page__ft">
+        <a href="javascript:home()"><img src="./images/icon_footer.png" /></a>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        var winH = $(window).height();
+        var categorySpace = 10;
+
+        $('.js_item').on('click', function(){
+            var id = $(this).data('id');
+            window.pageManager.go(id);
+        });
+        $('.js_category').on('click', function(){
+            var $this = $(this),
+                $inner = $this.next('.js_categoryInner'),
+                $page = $this.parents('.page'),
+                $parent = $(this).parent('li');
+            var innerH = $inner.data('height');
+            bear = $page;
+
+            if(!innerH){
+                $inner.css('height', 'auto');
+                innerH = $inner.height();
+                $inner.removeAttr('style');
+                $inner.data('height', innerH);
+            }
+
+            if($parent.hasClass('js_show')){
+                $parent.removeClass('js_show');
+            }else{
+                $parent.siblings().removeClass('js_show');
+
+                $parent.addClass('js_show');
+                if(this.offsetTop + this.offsetHeight + innerH > $page.scrollTop() + winH){
+                    var scrollTop = this.offsetTop + this.offsetHeight + innerH - winH + categorySpace;
+
+                    if(scrollTop > this.offsetTop){
+                        scrollTop = this.offsetTop - categorySpace;
+                    }
+
+                    $page.scrollTop(scrollTop);
+                }
+            }
+        });
+    });
+</script>
+</script>
+    <script type="text/html" id="tpl_panel">
+<div class="page">
+    <div class="page__hd">
+        <h1 class="page__title">Panel</h1>
+        <p class="page__desc">面板</p>
+    </div>
+    <div class="page__bd">
+        <div class="iotui-panel iotui-panel_access">
+            <div class="iotui-panel__hd">图文组合列表</div>
+            <div class="iotui-panel__bd">
+                <a href="javascript:void(0);" class="iotui-media-box iotui-media-box_appmsg">
+                    <div class="iotui-media-box__hd">
+                        <img class="iotui-media-box__thumb" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAMAAAAOusbgAAAAeFBMVEUAwAD///+U5ZTc9twOww7G8MYwzDCH4YcfyR9x23Hw+/DY9dhm2WZG0kbT9NP0/PTL8sux7LFe115T1VM+zz7i+OIXxhes6qxr2mvA8MCe6J6M4oz6/frr+us5zjn2/fa67rqB4IF13XWn6ad83nxa1loqyirn+eccHxx4AAAC/klEQVRo3u2W2ZKiQBBF8wpCNSCyLwri7v//4bRIFVXoTBBB+DAReV5sG6lTXDITiGEYhmEYhmEYhmEYhmEY5v9i5fsZGRx9PyGDne8f6K9cfd+mKXe1yNG/0CcqYE86AkBMBh66f20deBc7wA/1WFiTwvSEpBMA2JJOBsSLxe/4QEEaJRrASP8EVF8Q74GbmevKg0saa0B8QbwBdjRyADYxIhqxAZ++IKYtciPXLQVG+imw+oo4Bu56rjEJ4GYsvPmKOAB+xlz7L5aevqUXuePWVhvWJ4eWiwUQ67mK51qPj4dFDMlRLBZTqF3SDvmr4BwtkECu5gHWPkmDfQh02WLxXuvbvC8ku8F57GsI5e0CmUwLz1kq3kD17R1In5816rGvQ5VMk5FEtIiWislTffuDpl/k/PzscdQsv8r9qWq4LRWX6tQYtTxvI3XyrwdyQxChXioOngH3dLgOFjk0all56XRi/wDFQrGQU3Os5t0wJu1GNtNKHdPqYaGYQuRDfbfDf26AGLYSyGS3ZAK4S8XuoAlxGSdYMKwqZKM9XJMtyqXi7HX/CiAZS6d8bSVUz5J36mEMFDTlAFQzxOT1dzLRljjB6+++ejFqka+mXIe6F59mw22OuOw1F4T6lg/9VjL1rLDoI9Xzl1MSYDNHnPQnt3D1EE7PrXjye/3pVpr1Z45hMUdcACc5NVQI0bOdS1WA0wuz73e7/5TNqBPhQXPEFGJNV2zNqWI7QKBd2Gn6AiBko02zuAOXeWIXjV0jNqdKegaE/kJQ6Bfs4aju04lMLkA2T5wBSYPKDGF3RKhFYEa6A1L1LG2yacmsaZ6YPOSAMKNsO+N5dNTfkc5Aqe26uxHpx7ZirvgCwJpWq/lmX1hA7LyabQ34tt5RiJKXSwQ+0KU0V5xg+hZrd4Bn1n4EID+WkQdgLfRNtvil9SPfwy+WQ7PFBWQz6dGWZBLkeJFXZGCfLUjCgGgqXo5TuSu3cugdcTv/HjqnBTEMwzAMwzAMwzAMwzAMw/zf/AFbXiOA6frlMAAAAABJRU5ErkJggg==" alt="">
+                    </div>
+                    <div class="iotui-media-box__bd">
+                        <h4 class="iotui-media-box__title">标题一</h4>
+                        <p class="iotui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
+                    </div>
+                </a>
+                <a href="javascript:void(0);" class="iotui-media-box iotui-media-box_appmsg">
+                    <div class="iotui-media-box__hd">
+                        <img class="iotui-media-box__thumb" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAMAAAAOusbgAAAAeFBMVEUAwAD///+U5ZTc9twOww7G8MYwzDCH4YcfyR9x23Hw+/DY9dhm2WZG0kbT9NP0/PTL8sux7LFe115T1VM+zz7i+OIXxhes6qxr2mvA8MCe6J6M4oz6/frr+us5zjn2/fa67rqB4IF13XWn6ad83nxa1loqyirn+eccHxx4AAAC/klEQVRo3u2W2ZKiQBBF8wpCNSCyLwri7v//4bRIFVXoTBBB+DAReV5sG6lTXDITiGEYhmEYhmEYhmEYhmEY5v9i5fsZGRx9PyGDne8f6K9cfd+mKXe1yNG/0CcqYE86AkBMBh66f20deBc7wA/1WFiTwvSEpBMA2JJOBsSLxe/4QEEaJRrASP8EVF8Q74GbmevKg0saa0B8QbwBdjRyADYxIhqxAZ++IKYtciPXLQVG+imw+oo4Bu56rjEJ4GYsvPmKOAB+xlz7L5aevqUXuePWVhvWJ4eWiwUQ67mK51qPj4dFDMlRLBZTqF3SDvmr4BwtkECu5gHWPkmDfQh02WLxXuvbvC8ku8F57GsI5e0CmUwLz1kq3kD17R1In5816rGvQ5VMk5FEtIiWislTffuDpl/k/PzscdQsv8r9qWq4LRWX6tQYtTxvI3XyrwdyQxChXioOngH3dLgOFjk0all56XRi/wDFQrGQU3Os5t0wJu1GNtNKHdPqYaGYQuRDfbfDf26AGLYSyGS3ZAK4S8XuoAlxGSdYMKwqZKM9XJMtyqXi7HX/CiAZS6d8bSVUz5J36mEMFDTlAFQzxOT1dzLRljjB6+++ejFqka+mXIe6F59mw22OuOw1F4T6lg/9VjL1rLDoI9Xzl1MSYDNHnPQnt3D1EE7PrXjye/3pVpr1Z45hMUdcACc5NVQI0bOdS1WA0wuz73e7/5TNqBPhQXPEFGJNV2zNqWI7QKBd2Gn6AiBko02zuAOXeWIXjV0jNqdKegaE/kJQ6Bfs4aju04lMLkA2T5wBSYPKDGF3RKhFYEa6A1L1LG2yacmsaZ6YPOSAMKNsO+N5dNTfkc5Aqe26uxHpx7ZirvgCwJpWq/lmX1hA7LyabQ34tt5RiJKXSwQ+0KU0V5xg+hZrd4Bn1n4EID+WkQdgLfRNtvil9SPfwy+WQ7PFBWQz6dGWZBLkeJFXZGCfLUjCgGgqXo5TuSu3cugdcTv/HjqnBTEMwzAMwzAMwzAMwzAMw/zf/AFbXiOA6frlMAAAAABJRU5ErkJggg==" alt="">
+                    </div>
+                    <div class="iotui-media-box__bd">
+                        <h4 class="iotui-media-box__title">标题二</h4>
+                        <p class="iotui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
+                    </div>
+                </a>
+            </div>
+            <div class="iotui-panel__ft">
+                <a href="javascript:void(0);" class="iotui-cell iotui-cell_access iotui-cell_link">
+                    <div class="iotui-cell__bd">查看更多</div>
+                    <span class="iotui-cell__ft"></span>
+                </a>    
+            </div>
+        </div>
+        <div class="iotui-panel iotui-panel_access">
+            <div class="iotui-panel__hd">文字组合列表</div>
+            <div class="iotui-panel__bd">
+                <div class="iotui-media-box iotui-media-box_text">
+                    <h4 class="iotui-media-box__title">标题一</h4>
+                    <p class="iotui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
+                </div>
+                <div class="iotui-media-box iotui-media-box_text">
+                    <h4 class="iotui-media-box__title">标题二</h4>
+                    <p class="iotui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
+                </div>
+            </div>
+            <div class="iotui-panel__ft">
+                <a href="javascript:void(0);" class="iotui-cell iotui-cell_access iotui-cell_link">
+                    <div class="iotui-cell__bd">查看更多</div>
+                    <span class="iotui-cell__ft"></span>
+                </a>    
+            </div>
+        </div>
+        <div class="iotui-panel">
+            <div class="iotui-panel__hd">小图文组合列表</div>
+            <div class="iotui-panel__bd">
+                <div class="iotui-media-box iotui-media-box_small-appmsg">
+                    <div class="iotui-cells">
+                        <a class="iotui-cell iotui-cell_access" href="javascript:;">
+                            <div class="iotui-cell__hd"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt="" style="width:20px;margin-right:5px;display:block"></div>
+                            <div class="iotui-cell__bd iotui-cell_primary">
+                                <p>文字标题</p>
+                            </div>
+                            <span class="iotui-cell__ft"></span>
+                        </a>
+                        <a class="iotui-cell iotui-cell_access" href="javascript:;">
+                            <div class="iotui-cell__hd"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAVFBMVEXx8fHMzMzr6+vn5+fv7+/t7e3d3d2+vr7W1tbHx8eysrKdnZ3p6enk5OTR0dG7u7u3t7ejo6PY2Njh4eHf39/T09PExMSvr6+goKCqqqqnp6e4uLgcLY/OAAAAnklEQVRIx+3RSRLDIAxE0QYhAbGZPNu5/z0zrXHiqiz5W72FqhqtVuuXAl3iOV7iPV/iSsAqZa9BS7YOmMXnNNX4TWGxRMn3R6SxRNgy0bzXOW8EBO8SAClsPdB3psqlvG+Lw7ONXg/pTld52BjgSSkA3PV2OOemjIDcZQWgVvONw60q7sIpR38EnHPSMDQ4MjDjLPozhAkGrVbr/z0ANjAF4AcbXmYAAAAASUVORK5CYII=" alt="" style="width:20px;margin-right:5px;display:block"></div>
+                            <div class="iotui-cell__bd iotui-cell_primary">
+                                <p>文字标题</p>
+                            </div>
+                            <span class="iotui-cell__ft"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="iotui-panel">
+            <div class="iotui-panel__hd">文字列表附来源</div>
+            <div class="iotui-panel__bd">
+                <div class="iotui-media-box iotui-media-box_text">
+                    <h4 class="iotui-media-box__title">标题一</h4>
+                    <p class="iotui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</p>
+                    <ul class="iotui-media-box__info">
+                        <li class="iotui-media-box__info__meta">文字来源</li>
+                        <li class="iotui-media-box__info__meta">时间</li>
+                        <li class="iotui-media-box__info__meta iotui-media-box__info__meta_extra">其它信息</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page__ft">
+        <a href="javascript:home()"><img src="./images/icon_footer_link.png" /></a>
+    </div>
+</div>
+</script>
+    <script type="text/html" id="tpl_button">
+<div class="page">
+    <div class="page__hd">
+        <h1 class="page__title">Button</h1>
+        <p class="page__desc">按钮</p>
+    </div>
+    <div class="page__bd page__bd_spacing">
+        <a href="javascript:;" class="iotui-btn iotui-btn_primary">页面主操作 Normal</a>
+		<a href="javascript:;" class="iotui-btn iotui-btn_primary iotui-btn_loading"><i class="iotui-loading"></i>页面主操作 Loading</a>
+        <a href="javascript:;" class="iotui-btn iotui-btn_disabled iotui-btn_primary">页面主操作 Disabled</a>
+        <a href="javascript:;" class="iotui-btn iotui-btn_default">页面次要操作 Normal</a>
+		<a href="javascript:;" class="iotui-btn iotui-btn_default iotui-btn_loading"><i class="iotui-loading"></i>页面次操作 Loading</a>
+        <a href="javascript:;" class="iotui-btn iotui-btn_disabled iotui-btn_default">页面次要操作 Disabled</a>
+        <a href="javascript:;" class="iotui-btn iotui-btn_warn">警告类操作 Normal</a>
+		<a href="javascript:;" class="iotui-btn iotui-btn_warn iotui-btn_loading"><i class="iotui-loading"></i>警告类操作 Loading</a>
+        <a href="javascript:;" class="iotui-btn iotui-btn_disabled iotui-btn_warn">警告类操作 Disabled</a>
+        
+        <div class="button-sp-area">
+            <a href="javascript:;" class="iotui-btn iotui-btn_plain-default">按钮</a>
+            <a href="javascript:;" class="iotui-btn iotui-btn_plain-default iotui-btn_plain-disabled">按钮</a>
+            <a href="javascript:;" class="iotui-btn iotui-btn_plain-primary">按钮</a>
+            <a href="javascript:;" class="iotui-btn iotui-btn_plain-primary iotui-btn_plain-disabled">按钮</a>
+            <a href="javascript:;" class="iotui-btn iotui-btn_mini iotui-btn_primary">按钮</a>
+            <a href="javascript:;" class="iotui-btn iotui-btn_mini iotui-btn_default">按钮</a>
+            <a href="javascript:;" class="iotui-btn iotui-btn_mini iotui-btn_warn">按钮</a>
+        </div>
+    </div>
+    <div class="page__ft">
+        <a href="javascript:home()"><img src="./images/icon_footer_link.png" /></a>
+    </div>
+</div>
+
+</script>
+    <script type="text/html" id="tpl_toast">
+<div class="page">
+    <div class="page__hd">
+        <h1 class="page__title">Toast</h1>
+        <p class="page__desc">弹出式提示</p>
+    </div>
+    <div class="page__bd page__bd_spacing">
+        <a href="javascript:;" class="iotui-btn iotui-btn_default" id="showToast">成功提示</a>
+        <a href="javascript:;" class="iotui-btn iotui-btn_default" id="showLoadingToast">加载中提示</a>
+    </div>
+    <div class="page__ft">
+        <a href="javascript:home()"><img src="./images/icon_footer_link.png" /></a>
+    </div>
+
+    <!--BEGIN toast-->
+    <div id="toast" style="display: none;">
+        <div class="iotui-mask_transparent"></div>
+        <div class="iotui-toast">
+            <i class="iotui-icon-success-no-circle iotui-icon_toast"></i>
+            <p class="iotui-toast__content">已完成</p>
+        </div>
+    </div>
+    <!--end toast-->
+
+    <!-- loading toast -->
+    <div id="loadingToast" style="display:none;">
+        <div class="iotui-mask_transparent"></div>
+        <div class="iotui-toast">
+            <i class="iotui-loading iotui-icon_toast"></i>
+            <p class="iotui-toast__content">数据加载中</p>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    // toast
+    $(function(){
+        var $toast = $('#toast');
+        $('#showToast').on('click', function(){
+            if ($toast.css('display') != 'none') return;
+
+            $toast.fadeIn(100);
+            setTimeout(function () {
+                $toast.fadeOut(100);
+            }, 2000);
+        });
+    });
+
+    // loading
+    $(function(){
+        var $loadingToast = $('#loadingToast');
+        $('#showLoadingToast').on('click', function(){
+            if ($loadingToast.css('display') != 'none') return;
+
+            $loadingToast.fadeIn(100);
+            setTimeout(function () {
+                $loadingToast.fadeOut(100);
+            }, 2000);
+        });
+    });
+</script>
+
+</script>
+    <script type="text/html" id="tpl_searchbar">
+<div class="page">
+    <div class="page__hd">
+        <h1 class="page__title">SearchBar</h1>
+        <p class="page__desc">搜索栏</p>
+    </div>
+    <div class="page__bd">
+        <!--<a href="javascript:;" class="iotui-btn iotui-btn_primary">点击展现searchBar</a>-->
+        <div class="iotui-search-bar" id="searchBar">
+            <form class="iotui-search-bar__form">
+                <div class="iotui-search-bar__box">
+                    <i class="iotui-icon-search"></i>
+                    <input type="search" class="iotui-search-bar__input" id="searchInput" placeholder="洗衣点／洗车店名称" required/>
+                    <a href="javascript:" class="iotui-icon-clear" id="searchClear"></a>
+                </div>
+                <label class="iotui-search-bar__label" id="searchText">
+                    <i class="iotui-icon-search"></i>
+                    <span>洗衣点／洗车店名称</span>
+                </label>
+            </form>
+            <a href="javascript:" class="iotui-search-bar__cancel-btn" id="searchCancel">取消</a>
+        </div>
+        <div class="iotui-cells searchbar-result" id="searchResult">
+            <div class="iotui-cell iotui-cell_access">
+                <div class="iotui-cell__bd iotui-cell_primary">
+                    <p>实时搜索文本</p>
+                </div>
+            </div>
+            <div class="iotui-cell iotui-cell_access">
+                <div class="iotui-cell__bd iotui-cell_primary">
+                    <p>实时搜索文本</p>
+                </div>
+            </div>
+            <div class="iotui-cell iotui-cell_access">
+                <div class="iotui-cell__bd iotui-cell_primary">
+                    <p>实时搜索文本</p>
+                </div>
+            </div>
+            <div class="iotui-cell iotui-cell_access">
+                <div class="iotui-cell__bd iotui-cell_primary">
+                    <p>实时搜索文本</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page__ft">
+        <a href="javascript:home()"><img src="./images/icon_footer_link.png" /></a>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        var $searchBar = $('#searchBar'),
+            $searchResult = $('#searchResult'),
+            $searchText = $('#searchText'),
+            $searchInput = $('#searchInput'),
+            $searchClear = $('#searchClear'),
+            $searchCancel = $('#searchCancel');
+
+//        import Throttle from 'throttle';
+//        var throttledInstantSearch = Throttle.throttle(instantSearch, 1000);
+//        function instantSearch(e) {
+//            var searchKeyword = $(this).val();
+//            console.log(searchKeyword);
+//        }
+
+        function hideSearchResult(){
+            $searchResult.hide();
+            $searchInput.val('');
+        }
+        function cancelSearch(){
+            hideSearchResult();
+            $searchBar.removeClass('iotui-search-bar_focusing');
+            $searchText.show();
+        }
+
+        $searchText.on('click', function(){
+            $searchBar.addClass('iotui-search-bar_focusing');
+            $searchInput.focus();
+        });
+        $searchInput
+            .on('blur', function () {
+                if(!this.value.length) cancelSearch();
+            })
+            .on('input', function(){
+//                throttledInstantSearch()
+                if(this.value.length) {
+                    $searchResult.show();
+                } else {
+                    $searchResult.hide();
+                }
+            })
+        ;
+        $searchClear.on('click', function(){
+            hideSearchResult();
+            $searchInput.focus();
+        });
+        $searchCancel.on('click', function(){
+            cancelSearch();
+            $searchInput.blur();
+        });
+    });
+</script>
+</script>
+
+    <!--input之radio checkbox样式-->
+    <script type="text/html" id="tpl_tabbar">
+<div class="page">
+    <div class="page__hd">
+        <h1 class="page__title">tabbar</h1>
+        <p class="page__desc"></p>
+    </div>
+    <div class="page__bd">
+        <div class="iotui-tab">
+            <div class="iotui-tabbar">
+                <a href="javascript:;" class="iotui-tabbar_item iotui-bar__item_on" >
+                    <span>运行</span>
+                    <span class="iotui-bracket">0</span>
+                </a>
+                <a href="javascript:;" class="iotui-tabbar_item">
+                    <span>空闲</span>
+                    <span class="iotui-bracket">0</span>
+                </a>
+                <a href="javascript:;" class="iotui-tabbar_item iotui-bar__text_red">
+                    <span>提醒</span>
+                    <span class="iotui-bracket">0</span>
+                </a>
+                <a href="javascript:;" class="iotui-tabbar_item">
+                    <span>离线</span>
+                    <span class="iotui-bracket">0</span>
+                </a>
+
+            </div>
+        </div>
+        <div class="iotui-tab" style="margin-top: 2rem;">
+            <div class="iotui-tabbar">
+                <a href="javascript:;" class="iotui-tabbar_item iotui-bar__item_on" >
+                    <span>进行中订单</span>
+                </a>
+                <a href="javascript:;" class="iotui-tabbar_item">
+                    <span>已完成订单</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="page__ft">
+        <a href="javascript:home()"><img src="./images/icon_footer_link.png" /></a>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $('.iotui-tabbar_item').on('click', function () {
+           $(this).addClass('iotui-bar__item_on').siblings('.iotui-bar__item_on').removeClass('iotui-bar__item_on');
+        });
+    })
+</script>
+</script>
+    <script type="text/html" id="tpl_picker">
+<div class="page">
+    <div class="page__hd">
+        <h1 class="page__title">Picker</h1>
+        <p class="page__desc">多列选择器，需要配合js实现</p>
+    </div>
+    <div class="page__bd page__bd_spacing">
+        <a href="javascript:;" class=" iotui-btn_default" id="showPicker">单列选择器</a>
+        <a href="javascript:;" class=" iotui-btn_default" id="showDatePicker">日期选择器</a>
+        <a href="javascript:;" class=" iotui-btn_default" id="showPricePicker">价格选择器</a>
+    </div>
+</div>
+<script type="text/javascript">
+    $('#showPicker').on('click', function () {
+        weui.picker([{
+            label: '飞机票',
+            value: 0
+        }, {
+            label: '火车票',
+            value: 1
+        }, {
+            label: '的士票',
+            value: 2
+        }, {
+            label: '公交票 (disabled)',
+            disabled: true,
+            value: 3
+        }, {
+            label: '其他',
+            value: 4
+        }], {
+            onChange: function (result) {
+                console.log(result);
+            },
+            onConfirm: function (result) {
+                console.log(result);
+            }
+        });
+    });
+    $('#showDatePicker').on('click', function () {
+        weui.datePicker({
+            start: 1990,
+            end: new Date().getFullYear(),
+            onChange: function (result) {
+                console.log(result);
+            },
+            onConfirm: function (result) {
+                console.log(result);
+            }
+        });
+    });
+
+
+    $('#showPricePicker').on('click', function () {
+        var yuan = [];
+        var jiao = [];
+        var unitYuan = [{label: '元', value: 0}];
+        var unitJiao = [{label: '角', value: 0}];
+        for (var i = 0; i < 50; i++) {
+            var obj = {};
+            obj.label = i;
+            obj.value = i;
+            yuan.push(obj);
+            jiao.push(obj);
+        }
+
+        weui.picker(yuan, unitYuan, jiao, unitJiao, {
+            defaultValue: [0, 0, 0],
+            onChange: function (result) {
+                console.log(result);
+            },
+            onConfirm: function (result) {
+                console.log(result);
+                var money = parseInt(result[0]) + parseInt(result[2]) / 10;
+                console.log('您选择的价钱：' + money + ' 元');
+                return money
+            }
+        })
+    });
+
+</script>
+</script>
+    <script type="text/html" id="tpl_icon">
+<div class="page">
+    <div class="page__bd" style="height: 100%;">
+
+        <h3>测试图标</h3>
+
+        <a href="javascript:;" class="iotui-tabbar_icon-item iotui-bar_icon-item_on">
+                    <span style="display: inline-block;position: relative;" onclick="pngClick()">
+                        <img src="./images/icon_tabbar.png" alt="" class="iotui-tabbar_icon-icon">
+                        <span class="iotui-badge" style="position: absolute;top: -2px;right: -13px;">8</span>
+                    </span>
+            <p class="iotui-tabbar_icon-label">微信</p>
+        </a>
+
+        <a href="javascript:;" class="iotui-tabbar_icon-item">
+                    <span style="display: inline-block;position: relative;">
+                        <img src="./images/icon_tabbar.png" alt="" class="iotui-tabbar_icon-icon">
+                        <span class="iotui-badge iotui-badge_dot" style="position: absolute;top: 0;right: -6px;"></span>
+                    </span>
+            <p class="iotui-tabbar_icon-label">发现</p>
+        </a>
+    </div>
+
+</div>
+
+<script>
+    var isClick=0;
+    function pngClick() {
+        console.log('测试图标按钮');
+        if(isClick == 0){
+            $('.iotui-badge').css('display','none');
+            isClick=1;
+        }else{
+            $('.iotui-badge').css('display','inline-block');
+            isClick=0;
+        }
+    }
+
+</script>
+</script>
+    <script type="text/html" id="tpl_input-checkbox-radio">
+<div class="page">
+    <div class="page__bd">
+        <div class="iotui-cells__title">单选列表项</div>
+        <div class="iotui-cells iotui-cells_radio">
+            <label class="iotui-cell iotui-check__label" for="x11">
+                <div class="iotui-cell__bd">
+                    <p>运营商</p>
+                </div>
+                <div class="iotui-cell__ft">
+                    <input type="radio" class="iotui-check" name="radio1" id="x11"/>
+                    <span class="iotui-icon-checked"></span>
+                </div>
+            </label>
+            <label class="iotui-cell iotui-check__label" for="x12">
+
+                <div class="iotui-cell__bd">
+                    <p>管理员</p>
+                </div>
+                <div class="iotui-cell__ft">
+                    <input type="radio" name="radio1" class="iotui-check" id="x12" checked="checked"/>
+                    <span class="iotui-icon-checked"></span>
+                </div>
+            </label>
+        </div>
+        <div class="iotui-cells__title">复选列表项</div>
+        <div class="iotui-cells iotui-cells_checkbox">
+            <label class="iotui-cell iotui-check__label" for="s11">
+                <div class="iotui-cell__hd">
+                    <input type="checkbox" class="iotui-check" name="checkbox1" id="s11" checked="checked"/>
+                    <i class="iotui-icon-checked"></i>
+                </div>
+                <div class="iotui-cell__bd">
+                    <p>康乐园洗衣房</p>
+                </div>
+            </label>
+            <label class="iotui-cell iotui-check__label" for="s12">
+                <div class="iotui-cell__hd">
+                    <input type="checkbox" name="checkbox1" class="iotui-check" id="s12"/>
+                    <i class="iotui-icon-checked"></i>
+                </div>
+                <div class="iotui-cell__bd">
+                    <p>翠微洗衣房</p>
+                </div>
+            </label>
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        var $tooltips = $('.js_tooltips');
+        $('#showTooltips').on('click', function () {
+            if ($tooltips.css('display') != 'none') return;
+            // toptips的fixed, 如果有`animation`, `position: fixed`不生效
+            $('.page.cell').removeClass('slideIn');
+            $tooltips.css('display', 'block');
+            setTimeout(function () {
+                $tooltips.css('display', 'none');
+            }, 2000);
+        });
+    });
+</script>
+</script>
+
+    <script type="text/html" id="tpl_header">
+<div class="page">
+    <div class="page__hd">
+        <h1 class="page__title">header</h1>
+        <p class="page__desc">导航栏</p>
+    </div>
+    <div class="page__bd">
+
+        <div class="iotui-header" style="top: 120px">
+            <span class="iotui-header__back">
+                    <svg>
+                        <polyline points="12,18 4,9 12,0" style="fill:none;stroke:rgb(255,255,255);stroke-width:2"/>
+                        <polyline points="4,9 25,9" style="fill:none;stroke:rgb(255,255,255);stroke-width:2"/>
+                    </svg>
+            </span>
+            <span class="iotui-header__bd">
+                <span class="title_text">标题</span>
+            </span>
+            <span class="iotui-header__ft">
+                <a href="javascript:;">
+                    <span>注册</span>
+                </a>
+            </span>
+        </div>
+        <div class="iotui-header" style="top: 190px">
+            <span class="iotui-header__back">
+                    <svg>
+                        <polyline points="12,18 4,9 12,0" style="fill:none;stroke:rgb(255,255,255);stroke-width:2"/>
+                    </svg>
+            </span>
+            <span class="iotui-header__bd">
+                <span class="title_text">标题</span>
+            </span>
+            <span class="iotui-header__ft">
+                <a href="javascript:;">
+                    <span>04:39</span>
+                </a>
+            </span>
+        </div>
+
+        <div class="iotui-header" style="top: 260px">
+            <span class="iotui-header__hd">
+                <a class="" href="javascript:;">
+                    <span style="display: inline-block;position: relative;">
+                        <img src="./images/personal_info.png" alt="" class="iotui-tabbar_icon-icon">
+                        <span class="iotui-badge iotui-badge_dot" style="position: absolute;top: 0;right: -6px;"></span>
+                    </span>
+                </a>
+            </span>
+            <span class="iotui-header__bd">
+                <span class="title_text">总运营商</span>
+            </span>
+            <span class="iotui-header__ft">
+                <a class="iotui-header__ft-cp">
+                    <label id="device_type">全部</label>
+                    <img src="./images/icon-more.png">
+                </a>
+            </span>
+
+        </div>
+
+        <div class="iotui-header" style="top: 330px">
+            <span class="iotui-header__back">
+                    <svg>
+                        <polyline points="12,18 4,9 12,0" style="fill:none;stroke:rgb(255,255,255);stroke-width:2"/>
+                    </svg>
+            </span>
+            <span class="iotui-header__bd">
+                <span class="title_text">丹青楼洗衣房</span>
+            </span>
+            <span class="iotui-header__ft">
+                <a class="iotui-header__ft-sg" href="javascript:;">
+                    <img src="./images/ddl_noselect.png">
+                </a>
+            </span>
+        </div>
+
+    </div>
+    <div class="page__ft">
+        <a href="javascript:home()"><img src="./images/icon_footer_link.png" /></a>
+    </div>
+</div>
+
+</script>
+    <script type="text/html" id="tpl_tabbar">
+<div class="page">
+    <div class="page__hd">
+        <h1 class="page__title">tabbar</h1>
+        <p class="page__desc"></p>
+    </div>
+    <div class="page__bd">
+        <div class="iotui-tab">
+            <div class="iotui-tabbar">
+                <a href="javascript:;" class="iotui-tabbar_item iotui-bar__item_on" >
+                    <span>运行</span>
+                    <span class="iotui-bracket">0</span>
+                </a>
+                <a href="javascript:;" class="iotui-tabbar_item">
+                    <span>空闲</span>
+                    <span class="iotui-bracket">0</span>
+                </a>
+                <a href="javascript:;" class="iotui-tabbar_item iotui-bar__text_red">
+                    <span>提醒</span>
+                    <span class="iotui-bracket">0</span>
+                </a>
+                <a href="javascript:;" class="iotui-tabbar_item">
+                    <span>离线</span>
+                    <span class="iotui-bracket">0</span>
+                </a>
+
+            </div>
+        </div>
+        <div class="iotui-tab" style="margin-top: 2rem;">
+            <div class="iotui-tabbar">
+                <a href="javascript:;" class="iotui-tabbar_item iotui-bar__item_on" >
+                    <span>进行中订单</span>
+                </a>
+                <a href="javascript:;" class="iotui-tabbar_item">
+                    <span>已完成订单</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="page__ft">
+        <a href="javascript:home()"><img src="./images/icon_footer_link.png" /></a>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $('.iotui-tabbar_item').on('click', function () {
+           $(this).addClass('iotui-bar__item_on').siblings('.iotui-bar__item_on').removeClass('iotui-bar__item_on');
+        });
+    })
+</script>
+</script>
+    <script type="text/html" id="tpl_input">
+<div class="page">
+    <div class="page__hd">
+        <h1 class="page__title">input</h1>
+        <p class="page__desc">表单输入</p>
+    </div>
+    <div class="page__bd">
+        <div class="iotui-cells__title">表单</div>
+        <div class="iotui-cells iotui-cells_form">
+            <div class="iotui-cell">
+                <div class="iotui-cell__bd">
+                    <input class="iotui-input" placeholder="手机号" type="text" id="mPhone"/>
+                </div>
+                <div class="iotui-cell__ft iotui-flex__center">
+                    <img class="iotui-input-right" id="mPhone_clear" src="./images/input_clear.png"/>
+                </div>
+            </div>
+            <div class="iotui-cell_warn">
+                <div class="account-warn" id="phone_warn">请输入13位手机号</div>
+            </div>
+
+            <div class="iotui-cell">
+                <div class="iotui-cell__bd">
+                    <input class="iotui-input" placeholder="请输入密码6-18位" type="password" id="mPwd"/>
+                </div>
+                <div class="iotui-cell__ft iotui-flex__center">
+                    <img class="iotui-input-right" src="./images/pwd_cannot_look.png" id="mPwd_look"/>
+                </div>
+            </div>
+            <div class="iotui-cell_warn">
+                <div class="account-warn" id="pw_warn">请输入6-18位密码</div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="page__ft">
+        <a href="javascript:home()"><img src="./images/icon_footer_link.png" /></a>
+    </div>
+</div>
+<script>
+    $(function () {
+        $('#mPhone_clear').click(function () {
+            $('#mPhone').val('').change()
+        })
+        $('#mPwd_look').click(function () {
+            if ($('#mPwd').attr('type') === 'text') {
+                $('#mPwd').attr('type', 'password')
+                $('#mPwd_look').attr('src', './images/pwd_look.png')
+            } else {
+                $('#mPwd').attr('type', 'text')
+                $('#mPwd_look').attr('src', './images/pwd_cannot_look.png')
+            }
+        })
+
+        $("#mPhone").on('input change', function() {
+            console.log('a ' + this.value)
+            if (/^1[3|4|5|7|8]\d{9}$/.test(this.value)) {
+                $('#phone_warn').hide();
+            } else {
+                $('#phone_warn').show();
+            }
+        })
+
+        $("#mPwd").on('input', function() {
+            if (/^(\w|[!@#$%^&*]){6,18}$/.test(this.value)) {
+                $('#pw_warn').hide();
+            } else {
+                $('#pw_warn').show();
+            }3
+        })
+
+    })
+</script>
+</script>
+    <script type="text/html" id="tpl_cell">
+<div class="page">
+    <div class="page__hd">
+        <h1 class="page__title">Cell</h1>
+        <p class="page__desc"></p>
+    </div>
+    <div class="page__bd">
+        <div class="iotui-cells__title">普通样式</div>
+        <div class="iotui-cells">
+            <div class="iotui-cell" href="javascript:;">
+                <div class="iotui-cell__bd">
+                    <p>登录手机号</p>
+                </div>
+                <div class="iotui-cell__ft">
+                    <p>15989793890</p>
+                </div>
+            </div>
+
+            <div class="iotui-cell" href="javascript:;">
+                <div class="iotui-cell__bd">
+                    <p>经营许可证照片</p>
+                </div>
+                <div class="iotui-cell__ft">
+                    <button class="iotui-btn iotui-btn_mini iotui-btn_default iotui-cell__upload">上传</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="iotui-cells__title">文本样式</div>
+
+
+        <div class="iotui-cells__title">信息样式</div>
+
+    </div>
+    <div class="page__ft">
+        <a href="javascript:home()"><img src="./images/icon_footer_link.png" /></a>
+    </div>
+</div>
+
+</script>
+    <script type="text/html" id="tpl_stepbar">
+<div class="page">
+    <div class="page__hd">
+        <h1 class="page__title">Stepbar</h1>
+        <p class="page__desc"></p>
+    </div>
+    <div class="page__bd">
+        <div class="iotui-stepbar">
+            <div class="iotui-stepbar_item iotui-step-num-active last">
+                <div class="iotui-stepbar_item-step">
+                    <div class="iotui-step-line"></div>
+                    <span class="iotui-step-num"></span>
+                    <div class="iotui-step-line"></div>
+                </div>
+
+                <div class="iotui-stepbar_item-text">
+                    扫二维码
+                </div>
+            </div>
+            <div class="iotui-stepbar_item">
+                <div class="iotui-stepbar_item-step">
+                    <div class="iotui-step-line"></div>
+                    <span class="iotui-step-num">2</span>
+                    <div class="iotui-step-line"></div>
+                </div>
+
+                <div class="iotui-stepbar_item-text">
+                    输验证码
+                </div>
+            </div>
+            <div class="iotui-stepbar_item">
+                <div class="iotui-stepbar_item-step">
+                    <div class="iotui-step-line"></div>
+                    <span class="iotui-step-num">3</span>
+                    <div class="iotui-step-line"></div>
+                </div>
+
+                <div class="iotui-stepbar_item-text">
+                    移除设备
+                </div>
+            </div>
+        </div>
+
+        <div class="iotui-stepbar" style="margin-top: 20px">
+            <div class="iotui-stepbar_item iotui-step-num-active">
+                <div class="iotui-stepbar_item-step">
+                    <div class="iotui-step-line"></div>
+                    <span class="iotui-step-num">1</span>
+                    <div class="iotui-step-line"></div>
+                </div>
+
+                <div class="iotui-stepbar_item-text">
+                    选洗衣房
+                </div>
+            </div>
+            <div class="iotui-stepbar_item iotui-step-num-active last">
+                <div class="iotui-stepbar_item-step">
+                    <div class="iotui-step-line"></div>
+                    <span class="iotui-step-num"></span>
+                    <div class="iotui-step-line"></div>
+                </div>
+
+                <div class="iotui-stepbar_item-text">
+                    扫二维码
+                </div>
+            </div>
+            <div class="iotui-stepbar_item">
+                <div class="iotui-stepbar_item-step">
+                    <div class="iotui-step-line"></div>
+                    <span class="iotui-step-num">3</span>
+                    <div class="iotui-step-line"></div>
+                </div>
+
+                <div class="iotui-stepbar_item-text">
+                    输验证码
+                </div>
+            </div>
+            <div class="iotui-stepbar_item">
+                <div class="iotui-stepbar_item-step">
+                    <div class="iotui-step-line"></div>
+                    <span class="iotui-step-num">4</span>
+                    <div class="iotui-step-line"></div>
+                </div>
+
+                <div class="iotui-stepbar_item-text">
+                    绑定到洗衣房
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page__ft">
+        <a href="javascript:home()"><img src="./images/icon_footer_link.png" /></a>
+    </div>
+</div>
+
+</script>
+
+    <script src="./zepto.min.js"></script>
+    <!--<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>-->
+    <!--<script src="https://res.wx.qq.com/open/libs/weuijs/1.0.0/weui.min.js"></script>-->
+    <script src="./example.js"></script>
+</body>
+</html>
