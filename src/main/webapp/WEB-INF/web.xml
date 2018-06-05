@@ -78,7 +78,7 @@
   </servlet-mapping>
   <!--默认欢迎页面，当没匹配到时-->
   <welcome-file-list>
-     <welcome-file>static/index.html</welcome-file>
+     <welcome-file>welcome.html</welcome-file>
   </welcome-file-list>
 
 </web-app>
